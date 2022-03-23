@@ -2,14 +2,14 @@
 
 pragma solidity 0.8.4;
 
-import "https://github.com/net2devcrypto/nftstaking/N2DRewards.sol";
-import "https://github.com/net2devcrypto/nftstaking/Collection.sol";
+import "https://github.com/net2devcrypto/n2dstaking/N2DRewards.sol";
+import "https://github.com/net2devcrypto/n2dstaking/Collection.sol";
 
 contract NFTStaking is Ownable, IERC721Receiver {
 
   uint256 public totalStaked;
   
-  // Struct to store a stake's token, owner, and earning values
+  // struct to store a stake's token, owner, and earning values
   struct Stake {
     uint24 tokenId;
     uint48 timestamp;
@@ -20,7 +20,7 @@ contract NFTStaking is Ownable, IERC721Receiver {
   event NFTUnstaked(address owner, uint256 tokenId, uint256 value);
   event Claimed(address owner, uint256 amount);
 
-//Reference NFT and Staking Tokens to Variable 
+  // reference to the Block NFT contract
   Collection nft;
   N2DRewards token;
 
@@ -30,24 +30,6 @@ contract NFTStaking is Ownable, IERC721Receiver {
    constructor(Collection _nft, N2DRewards _token) { 
     nft = _nft;
     token = _token;
-  }
-
-  function stakeDuringMint(address account, uint256[] calldata tokenIds) external {
-    require(msg.sender == address(nft), 'Can be called only by NFT contract');
-    uint256 tokenId;
-    totalStaked += tokenIds.length;
-    for (uint i = 0; i < tokenIds.length; i++) {
-      tokenId = tokenIds[i];
-      require(nft.ownerOf(tokenId) == address(this), "nft must be sent first");
-      require(vault[tokenId].tokenId == 0, 'already staked');
-
-      vault[tokenId] = Stake({
-        owner: account,
-        tokenId: uint24(tokenId),
-        timestamp: uint48(block.timestamp)
-      });
-      emit NFTStaked(account, tokenId, block.timestamp);
-    }
   }
 
   function stake(uint256[] calldata tokenIds) external {
@@ -104,7 +86,7 @@ contract NFTStaking is Ownable, IERC721Receiver {
       Stake memory staked = vault[tokenId];
       require(staked.owner == account, "not an owner");
       uint256 stakedAt = staked.timestamp;
-      earned += 1 ether * (block.timestamp - stakedAt) / 1 days;
+      earned += 100000 ether * (block.timestamp - stakedAt) / 1 days;
       vault[tokenId] = Stake({
         owner: account,
         tokenId: uint24(tokenId),
@@ -128,9 +110,9 @@ contract NFTStaking is Ownable, IERC721Receiver {
      uint256 earned = 0;
       Stake memory staked = vault[tokenId];
       uint256 stakedAt = staked.timestamp;
-      earned += 1 ether * (block.timestamp - stakedAt) / 1 days;
+      earned += 100000 ether * (block.timestamp - stakedAt) / 1 days;
     uint256 earnRatePerSecond = totalScore * 1 ether / 1 days;
-    earnRatePerSecond = earnRatePerSecond / 10000;
+    earnRatePerSecond = earnRatePerSecond / 100000;
     // earned, earnRatePerSecond
     return [earned, earnRatePerSecond];
   }
@@ -180,4 +162,3 @@ contract NFTStaking is Ownable, IERC721Receiver {
     }
   
 }
-
