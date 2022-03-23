@@ -5,8 +5,8 @@ pragma solidity 0.8.4;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 
-import "https://github.com/net2devcrypto/n2dstake/Collection.sol";
-import "https://github.com/net2devcrypto/n2dreward/N2DRewards.sol";
+import "https://github.com/net2devcrypto/n2dstaking/Collection.sol";
+import "https://github.com/net2devcrypto/n2dstaking/N2DRewards.sol";
 
 
 contract NFTStaking is Ownable, IERC721Receiver {
