@@ -9,7 +9,7 @@ contract NFTStaking is Ownable, IERC721Receiver {
 
   uint256 public totalStaked;
   
-  // struct to store a stake's token, owner, and earning values
+  // Struct to store a stake's token, owner, and earning values
   struct Stake {
     uint24 tokenId;
     uint48 timestamp;
@@ -20,7 +20,7 @@ contract NFTStaking is Ownable, IERC721Receiver {
   event NFTUnstaked(address owner, uint256 tokenId, uint256 value);
   event Claimed(address owner, uint256 amount);
 
-  // reference to the Block NFT contract
+//Reference NFT and Staking Tokens to Variable 
   Collection nft;
   N2DRewards token;
 
