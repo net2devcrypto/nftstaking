@@ -2,9 +2,8 @@
 
 pragma solidity 0.8.4;
 
-import "https://github.com/net2devcrypto/n2dstaking/Collection.sol";
 import "https://github.com/net2devcrypto/n2dstaking/N2DRewards.sol";
-
+import "https://github.com/net2devcrypto/n2dstaking/Collection.sol";
 
 contract NFTStaking is Ownable, IERC721Receiver {
 
@@ -114,7 +113,7 @@ contract NFTStaking is Ownable, IERC721Receiver {
 
     }
     if (earned > 0) {
-      earned = earned / 10000;
+      earned = earned / 10;
       token.mint(account, earned);
     }
     if (_unstake) {
@@ -181,3 +180,4 @@ contract NFTStaking is Ownable, IERC721Receiver {
     }
   
 }
+
