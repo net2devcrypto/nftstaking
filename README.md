@@ -1,5 +1,5 @@
 # nftstaking
-Stake your ERC721 NFTs and issue ERC20 Tokens as Rewards!
+🔥🔥Stake your ERC721 NFTs and issue ERC20 Tokens as Rewards, A Repo to support the full video tutorial series on performing NFT Staking ERC721 and earn ERC20 tokens
 
 Net2Dev NFT Staking with ERC20 Token Rewards Youtube Video Tutorial Series
 https://www.youtube.com/watch?v=i6pPI5phMA0&list=PLLkrq2VBYc1YAIXfxuuh1DohmPZybsELt
