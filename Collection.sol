@@ -1,6 +1,16 @@
 // SPDX-License-Identifier: MIT
 
 /*
+
+Follow/Subscribe Youtube, Github, IM, Tiktok
+for more amazing content!!
+@Net2Dev
+███╗░░██╗███████╗████████╗██████╗░██████╗░███████╗██╗░░░██╗
+████╗░██║██╔════╝╚══██╔══╝╚════██╗██╔══██╗██╔════╝██║░░░██║
+██╔██╗██║█████╗░░░░░██║░░░░░███╔═╝██║░░██║█████╗░░╚██╗░██╔╝
+██║╚████║██╔══╝░░░░░██║░░░██╔══╝░░██║░░██║██╔══╝░░░╚████╔╝░
+██║░╚███║███████╗░░░██║░░░███████╗██████╔╝███████╗░░╚██╔╝░░
+╚═╝░░╚══╝╚══════╝░░░╚═╝░░░╚══════╝╚═════╝░╚══════╝░░░╚═╝░░░
 THIS CONTRACT IS AVAILABLE FOR EDUCATIONAL 
 PURPOSES ONLY. YOU ARE SOLELY REPONSIBLE 
 FOR ITS USE. I AM NOT RESPONSIBLE FOR ANY
