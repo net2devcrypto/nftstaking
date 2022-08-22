@@ -39,6 +39,11 @@ contract Collection is ERC721Enumerable, Ownable {
 
     constructor() ERC721("Net2Dev NFT Collection", "N2D") {}
 
+    function _baseURI() internal view virtual override returns (string memory) {
+    return "ipfs://QmYB5uWZqfunBq7yWnamTqoXWBAHiQoirNLmuxMzDThHhi/";
+
+    }
+    
     function mint(address _to, uint256 _mintAmount) external payable {
         uint256 supply = totalSupply();
         require(!paused, "contract is paused");
